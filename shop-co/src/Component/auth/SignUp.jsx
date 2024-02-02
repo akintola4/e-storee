@@ -59,16 +59,17 @@ return (
     <div>
         <main className="flex flex-col gap-5 px-5 mx-auto my-32 xl:px-60 md:pt-20 accent-green-950 md:my-14">
             <section className="flex items-center justify-center gap-10 rounded-lg md:justify-normal ">
-                <div className="hidden title lg:block ">
+            <div className="hidden w-6/12 title md:block ">
                     <img src="img/register.svg" className="" alt="" />
                 </div>
-                <div className="flex flex-col gap-5 infomation ">
+                <div className="flex flex-col gap-5 lg:w-4/12 xl:w-6/12 infomation ">
                     <img src="img/logo.svg" className="w-6/12 md:p-5" alt="" />
 
                     <form action="" className="flex flex-col gap-5 md:p-5"
                         onSubmit={handleSubmit}
                     >
                         <h4 className="text-3xl font-bold" >Create an account</h4>
+                        
                         <h4 className="flex flex-row gap-5 text-zinc-400">Already have an account? <Link to="/login" className="relative text-md  w-fit block hover:text-black text-black after:block after:content-[''] after:absolute after:h-[2px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"> Login</Link></h4>
                         <div className="flex flex-col gap-2">
                             <label for="Email">First name</label>

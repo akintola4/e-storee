@@ -50,10 +50,10 @@ export default function Login({setToken}) {
         <div>
             <main className="flex flex-col gap-5 px-5 mx-auto my-32 xl:px-60 md:pt-20 accent-green-950 md:my-14">
                 <section className="flex items-center justify-center gap-10 rounded-lg md:justify-normal ">
-                    <div className="hidden title lg:block ">
+                    <div className="hidden w-6/12 title md:block ">
                         <img src="img/login.svg" className="" alt="" />
                     </div>
-                    <div className="flex flex-col gap-5 xl:w-8/12 infomation ">
+                    <div className="flex flex-col gap-5 lg:w-4/12 xl:w-6/12 infomation ">
                         <img src="img/logo.svg" className="w-6/12 md:p-5" alt="" />
 
                         <form action="" className="flex flex-col gap-5 md:p-5"
