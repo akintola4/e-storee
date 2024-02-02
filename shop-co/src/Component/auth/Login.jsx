@@ -30,7 +30,12 @@ export default function Login({setToken}) {
               })
               console.log(data)
               setToken(data)
-            navigate('/Profile')
+              if (data.user) {
+                navigate('/Profile')
+              }
+            else if(data.user == null){
+                alert("Invalid Credentials")
+            }
         } catch (error) {
             alert(error)
         }
