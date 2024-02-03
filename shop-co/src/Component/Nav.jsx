@@ -75,8 +75,7 @@ export default function Nav({ setToken }) {
                 </div>
                 <div className="nav-3 ">
                     <ul className="flex flex-row items-center gap-5">
-                        <button className="hidden p-2 text-black rounded-md cursor-pointer lg:block md:hidden hover:bg-black text-1xl hover:text-white hover:bg-zinic-600 bg-none"
-                            href=""><FaMagnifyingGlass /></button>
+
                         <Link className="p-2 text-2xl text-black rounded-md cursor-pointer hover:bg-black hover:text-white hover:bg-zinic-600 bg-none"
                             to="/Cart"><LuShoppingCart /></Link >
                         <Link
