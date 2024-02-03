@@ -127,6 +127,11 @@ export default function ProductList() {
     //         }
     //        
 
+    const [showTag1, setshowTag1] = useState()
+    const [showTag2, setshowTag2] = useState()
+    const [showTag3, setshowTag3] = useState()
+    const [showTag4, setshowTag4] = useState()
+
     return (
         <section className='flex flex-row px-2 pt-20 xl:p-20 md:pt-28' >
             <div className="flex-col items-start hidden w-3/12 p-5 m-5 border-2 rounded-xl md:flex">
