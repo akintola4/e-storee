@@ -26,13 +26,14 @@ export default function Cart() {
     const [discountCode, setDiscountCode] = useState("")
     const [message, setMessage] = useState("")
     const [newTotal, setnewTotal] = useState()
-    const { cartItems, getSubtotal, getDiscounttotal, getTotal } = useContext(ShopContext)
+    const { cartItems, getSubtotal, getDiscounttotal } = useContext(ShopContext)
     const subTotal = getSubtotal()
     const discount = getDiscounttotal()
     let total = subTotal - discount - 15
     console.log(cartItems)
 
-    const convertedNaira = newTotal * 1400
+console.log(newTotal)
+    const convertedNaira = (newTotal == null || undefined) ? subTotal * 1400 : newTotal * 1400;
 
     const handleCode = (e) => {
         setDiscountCode(e.target.value)
@@ -41,10 +42,10 @@ export default function Cart() {
     const handleApply = () => {
         const inputValue = discountCode
         if (inputValue.toLowerCase() == "fola") {
-            setMessage("Discount Applied")
-            total -= 20
-            setnewTotal(total)
-            console.log(total)
+            setMessage("50% Discount Applied")
+            let finalPrice = subTotal * (1 - 0.5);
+            setnewTotal(finalPrice)
+            console.log(finalPrice)
         } else {
             setMessage("Invalid Code")
             let total = subTotal - discount - 15
@@ -131,8 +132,9 @@ export default function Cart() {
                             </div>
                             <div className="flex flex-row justify-between pt-5 border-t-2">
                                 <p className="text-md text-zinc-500">Total</p>
-                                <h4 className="font-bold text-1xl">${newTotal}</h4>
+                                <h4 className="font-bold text-1xl">${total}</h4>
                             </div>
+                          
                         </div>
 
                         <div className="flex flex-col justify-between w-full gap-5 lg:flex-row">
@@ -150,7 +152,16 @@ export default function Cart() {
                                 href="">Apply </button>
 
                         </div>
-                        {message ? <p className="text-red-500">{message}</p> : null}
+                       
+                        {message ?
+                        <>
+                          <div className="flex flex-row justify-between pt-5 border-t-2">
+                                <p className="text-md text-zinc-500">Total after Promo code</p>
+                                <h4 className="font-bold text-1xl">${newTotal}</h4>
+                            </div>
+                            <p className="text-red-500">{message}</p> 
+                        </>
+                            : null}
 
                         {/* <button className="p-2 text-center text-white bg-black border-2 border-black rounded-full cursor-pointer hover:border-black hover:border-2 hover:bg-white hover:text-black hover:bg-zinic-600"
                             href=""

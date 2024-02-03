@@ -63,7 +63,6 @@ export default function ReviewSwiper() {
     return (
 
         <section className='m-5 review-1 md:m-10'>
-           
             <div className="flex flex-row items-center justify-between">
             <h4 className="text-2xl font-extrabold md:text-6xl" >OUR HAPPY CUSTOMERS
             </h4>
@@ -84,7 +83,7 @@ export default function ReviewSwiper() {
                     dynamicBullets: true,
                 }}
                 breakpoints={{
-                    375: {
+                    320: {
                         slidesPerView: 1,
                         spaceBetween: 20,
                     },
@@ -93,11 +92,11 @@ export default function ReviewSwiper() {
                         spaceBetween: 20,
                     },
                     768: {
-                        slidesPerView: 3,
+                        slidesPerView: 1,
                         spaceBetween: 40,
                     },
                     1024: {
-                        slidesPerView: 3,
+                        slidesPerView: 2,
                         spaceBetween: 40,
                     },
                 }}

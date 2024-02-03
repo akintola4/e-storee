@@ -18,9 +18,9 @@ export default function Checkout() {
   return (
     <div>
       <div>
-        <h4 className="py-5 text-4xl font-extrabold">Shipping Address</h4>
+        <h4 className="py-5 text-2xl font-extrabold md:text-4xl">Shipping Address</h4>
       </div>
-      <form action="" className='grid grid-cols-2 gap-10'>
+      <form action="" className='grid gap-10 md:grid-cols-2'>
         <div className="flex flex-col gap-2">
           <label for="firstName">First name</label>
           <input

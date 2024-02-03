@@ -5,11 +5,11 @@ import Profile from "./Profile";
 import { useState } from "react";
 import { supabase } from '../supabase-context/client'
 import { useNavigate } from "react-router-dom";
-export default function Login({setToken}) {
+export default function Login({ setToken }) {
 
     const navigate = useNavigate()
     const [formData, setFormData] = useState(
-        { 
+        {
             email: "",
             password: ""
         }
@@ -27,13 +27,13 @@ export default function Login({setToken}) {
             const { data, error } = await supabase.auth.signInWithPassword({
                 email: formData.email,
                 password: formData.password,
-              })
-              console.log(data)
-              setToken(data)
-              if (data.user) {
+            })
+            console.log(data)
+            setToken(data)
+            if (data.user) {
                 navigate('/Profile')
-              }
-            else if(data.user == null){
+            }
+            else if (data.user == null) {
                 alert("Invalid Credentials")
             }
         } catch (error) {
@@ -43,8 +43,8 @@ export default function Login({setToken}) {
     function withGoogle() {
         supabase.auth.signInWithOAuth({
             provider: 'google',
-          })
-          
+        })
+
     }
     return (
         <div>
@@ -68,7 +68,7 @@ export default function Login({setToken}) {
                                     type="email"
                                     name="email"
                                     onChange={handleChange}
-                                    
+
                                     className="p-3 border-2 rounded-lg text-green-950 focus:outline-none border-zinc-200 focus:ring-black focus:ring-2 placeholder:text-green-950"
                                     placeholder="name@mail.com"
                                     id="email" />
@@ -80,7 +80,7 @@ export default function Login({setToken}) {
                                     className="p-3 border-2 rounded-lg shadow-sm text-green-950 focus:outline-none border-zinc-200 focus:ring-black focus:ring-2 placeholder:text-green-950 "
                                     name="password"
                                     onChange={handleChange}
-                                    
+
                                     placeholder="••••••••" id="password" />
                             </div>
                             <button
@@ -90,32 +90,32 @@ export default function Login({setToken}) {
                                 Login
                             </button>
                             <div className="flex flex-col gap-5 pt-5">
-                                <button 
-                                onClick={withGoogle}
-                                className="flex flex-row items-center gap-10 p-3 text-center text-black bg-white border border-black rounded-lg cursor-pointer hover:border-white hover:bg-black hover:text-white ">
+                                {/* <button
+                                    onClick={withGoogle}
+                                    className="flex flex-row items-center gap-10 p-3 text-center text-black bg-white border border-black rounded-lg cursor-pointer hover:border-white hover:bg-black hover:text-white ">
                                     <FaGoogle className="text-2xl" />
                                     <h4 className="text-center">Continue with Google</h4>
-                                </button>
+                                </button> */}
                                 <div
-  id="g_id_onload"
-  data-client_id="<client ID>"
-  data-context="signin"
-  data-ux_mode="popup"
-  data-callback="handleSignInWithGoogle"
-  data-nonce=""
-  data-auto_select="true"
-  data-itp_support="true"
-></div>
+                                    id="g_id_onload"
+                                    data-client_id="<client ID>"
+                                    data-context="signin"
+                                    data-ux_mode="popup"
+                                    data-callback="handleSignInWithGoogle"
+                                    data-nonce=""
+                                    data-auto_select="true"
+                                    data-itp_support="true"
+                                ></div>
 
-<div
-  class="g_id_signin"
-  data-type="standard"
-  data-shape="pill"
-  data-theme="outline"
-  data-text="signin_with"
-  data-size="large"
-  data-logo_alignment="left"
-></div>
+                                <div
+                                    class="g_id_signin"
+                                    data-type="standard"
+                                    data-shape="pill"
+                                    data-theme="outline"
+                                    data-text="signin_with"
+                                    data-size="large"
+                                    data-logo_alignment="left"
+                                ></div>
 
                             </div>
                         </form>

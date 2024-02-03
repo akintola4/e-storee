@@ -28,7 +28,7 @@ export default function Nav({ setToken }) {
      try {
          supabase.auth.signOut();
         // Redirect to login page or perform other actions after sign-out
-        console.log('Logged out successfully!');
+        alert('Logged out successfully!');
         setToken(null)
         navigate('/Login')
       } catch (error) {
