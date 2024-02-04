@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom"
 export default function Hero() {
     return (
-        <><section className="flex flex-col items-center gap-20 py-10 pt-24 hero md:pt-28 md:flex-row md:justify-between ">
+        <><section className="flex flex-col items-center justify-between gap-20 py-10 pt-24 align-middle hero md:pt-28 lg:flex-row ">
 
-            <div className="flex flex-col gap-2 mx-5 hero-1 md:mx-10 md:w-7/12">
-                <h4 className="text-4xl font-extrabold md:text-7xl" data-aos="zoom-in-up">FIND CLOTHES THAT MATCHES YOUR STYLE
+            <div className="flex flex-col gap-2 mx-5 hero-1 lg:mx-10 lg:w-7/12">
+                <h4 className="text-2xl font-extrabold lg:text-6xl" data-aos="zoom-in-up">FIND CLOTHES THAT MATCHES YOUR STYLE
                 </h4>
 
                 <div className="flex flex-col gap-10 py-5" data-aos="fade-right">
@@ -32,7 +32,7 @@ export default function Hero() {
                 </div>
             </div>
             <div className="hero-2 md:w-8/12" data-aos="zoom-in-up">
-                <img src="img/hero.svg" alt="" className="md:w-12/12 " />
+                <img src="img/hero.svg" alt="" className="lg:w-12/12 " />
             </div>
         </section>
         <section className="px-10 py-10 bg-black ">
