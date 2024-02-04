@@ -121,14 +121,14 @@ return (
                         >
                             Create an account
                         </button>
-                        <div className="flex flex-col gap-5 pt-5">
+                        {/* <div className="flex flex-col gap-5 pt-5">
                             <button 
                             onClick={withGoogle}
                             className="flex flex-row items-center gap-10 p-3 text-center text-black bg-white border border-black rounded-lg cursor-pointer hover:border-white hover:bg-black hover:text-white ">
                                 <FaGoogle className="text-2xl" />
                                 <h4 className="text-center">Continue with Google</h4>
                             </button>
-                        </div>
+                        </div> */}
                     </form>
                 </div>
             </section>

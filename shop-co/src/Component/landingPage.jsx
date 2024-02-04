@@ -13,8 +13,8 @@ export default function App() {
   return (
     <div className="App">
       <Hero />
-      <section>
-        <h4 className="py-5 text-4xl font-extrabold text-center md:py-10 md:text-6xl" >NEW ARRIVALS
+      <section className='pt-10'>
+        <h4 className="py-5 text-4xl font-extrabold text-center md:py-5 md:text-6xl" >NEW ARRIVALS
         </h4>
         <CardBody />
         <div className='flex justify-center'>
@@ -23,7 +23,7 @@ export default function App() {
         </div>
       </section>
 
-      <section>
+      <section className='pt-10'>
         <h4 className="py-5 text-4xl font-extrabold text-center md:py-5 md:text-6xl" >TOP SELLING
         </h4>
         <CardBody />

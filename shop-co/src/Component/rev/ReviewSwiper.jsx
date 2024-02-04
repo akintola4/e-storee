@@ -64,7 +64,7 @@ export default function ReviewSwiper() {
 
         <section className='m-5 review-1 md:m-10'>
             <div className="flex flex-row items-center justify-between">
-            <h4 className="text-2xl font-extrabold md:text-6xl" >OUR HAPPY CUSTOMERS
+            <h4 className="font-extrabold text-1xl md:text-6xl" >OUR HAPPY CUSTOMERS
             </h4>
             <div className="flex flex-row gap-10 text-2xl">
             <button onClick={prevHandler}><FaArrowLeftLong /></button>
