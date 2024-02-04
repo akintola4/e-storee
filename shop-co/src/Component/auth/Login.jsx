@@ -8,7 +8,7 @@ import { useState } from "react";
 import { supabase } from '../supabase-context/client'
 import { useNavigate } from "react-router-dom";
 export default function Login({ setToken }) {
-    const [showModal, setShowModal] = useState(true);
+    const [showModal, setShowModal] = useState();
     const navigate = useNavigate()
     const [formData, setFormData] = useState(
         {
