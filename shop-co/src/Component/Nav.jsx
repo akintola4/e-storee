@@ -135,14 +135,14 @@ export default function Nav({ setToken }) {
                                                 <h4 className='text-lg font-bold md:text-2xl'>Success</h4>
                                                 <p className='text-sm md:text-md text-zinc-700'>Logged out successfully!</p>
                                             </div>
-                                            <Link
+                                            {/* <Link
                                                 className="p-2 text-center text-white bg-black border-2 border-black rounded-full cursor-pointer hover:border-black hover:border-2 hover:bg-white hover:text-black hover:bg-zinic-600"
                                                 type="button"
                                                 to={"/Login"}
                                                 onClick={() => setShowModal(false)}
                                             >
                                                 Try again
-                                            </Link>
+                                            </Link> */}
                                         </div>
                                     </div>
                                 </div>

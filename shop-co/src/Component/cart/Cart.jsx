@@ -7,7 +7,7 @@ import { IoClose } from "react-icons/io5"
 import { IoMdCheckmark } from "react-icons/io"
 import { CiDeliveryTruck } from "react-icons/ci";
 import { PaystackButton } from 'react-paystack';
-
+import { FaArrowRight } from "react-icons/fa6";
 import { useContext } from "react";
 import { useState } from "react";
 import PRODUCTS from "../products"
@@ -100,6 +100,31 @@ console.log(newTotal)
             {setShowModal(true) },
           onClose: () => alert("Wait! Don't leave :("),
         }
+
+        const [token, setToken] = useState(false)
+
+        const [error, setError] = useState(null);
+      
+        useEffect(() => {
+          const fetchSession = async () => {
+            try {
+              const { data: sessionData } = await supabase.auth.getSession();
+              if (sessionData.session !== null) {
+                setToken(true)
+              }if(sessionData.session == null){
+                setToken(false)
+              }
+              
+            } catch (err) {
+              setError(err);
+            }
+          };
+      
+          fetchSession();
+        }, []);
+    
+
+
         return (
             <div className="pt-20 mx-5 lg:my-20 lg:mx-20">
                 <div>
@@ -168,8 +193,9 @@ console.log(newTotal)
                             type="button"
                             onClick={() => setShowModal(true)}> Pay
                         </button> */}
-                        <PaystackButton className="p-2 text-center text-white bg-black border-2 border-black rounded-full cursor-pointer hover:border-black hover:border-2 hover:bg-white hover:text-black hover:bg-zinic-600"
-                             {...componentProps}  />
+                                {token ?   <PaystackButton className="p-2 text-center text-white bg-black border-2 border-black rounded-full cursor-pointer hover:border-black hover:border-2 hover:bg-white hover:text-black hover:bg-zinic-600"
+                             {...componentProps}  />: <Link to="/Login" className="flex flex-row items-center justify-center gap-2 p-2 text-center text-white bg-black border-2 border-black rounded-full cursor-pointer hover:border-black hover:border-2 hover:bg-white hover:text-black hover:bg-zinic-600">Login to pay <FaArrowRight /></Link> }  
+                      
                         {showModal ? (
                             <>
                                 <div className="fixed inset-0 z-50 flex justify-end m-5 overflow-x-hidden overflow-y-auto outline-none focus:outline-none">

@@ -163,14 +163,14 @@ console.log(fullName)
           </Route>
           <Route path='/Profile' element={<Profile/>} />
           <Route path=':Id ' element={<ProductContent />}></Route>
-          {token ? <Route path='ProductList' element={<ProductList />} /> : ''}
+          <Route path='ProductList' element={<ProductList />} /> 
 
           <Route path='/productDetail/:productId' element={<ProductContent />}>
             <Route path="faq" element={<Faq />} />
             <Route path="rating" element={<Rating />} />
             <Route path="productInfo" element={<ProductInfo />} />
           </Route>
-          <Route path='cart' element={<Cart />}></Route>
+          <Route path='cart' element={<Cart token={token}/>}></Route>
           <Route path="/login" element={<Login setToken={setToken} />} />
           <Route path="/Register" element={<Register />} />
           {/*         this are for the path we are yet to create
